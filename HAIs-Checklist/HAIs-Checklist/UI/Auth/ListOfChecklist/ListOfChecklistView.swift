@@ -22,29 +22,38 @@ struct ListOfChecklistView: View {
     
     var body: some View {
         NavigationStack {
-            Text("Оберіть чекліст")
-                .bold()
-                .font(.largeTitle)
-                .padding(.bottom, 20)
-            switch viewModel.processable {
-            case .failure(let error):
-                VStack {
-                    Spacer()
-                    Image("smth-went-wrong")
-                        .resizable()
-                        .frame(width: 300, height: 300)
-                    Text(error)
-                    Spacer()
+            VStack {
+                Spacer()
+                    .frame(height: 20)
+                Text("Оберіть чекліст")
+                    .bold()
+                    .font(.largeTitle)
+                    .padding(.bottom, 20)
+                
+                switch viewModel.processable {
+                case .failure(let error):
+                    VStack {
+                        Spacer()
+                        Image("smth-went-wrong")
+                            .resizable()
+                            .frame(width: 300, height: 300)
+                        Text(error)
+                        Spacer()
+                    }
+                case .processedNoValue:
+                    emptyMessageView
+                case .processing:
+                    loadingView
+                case .processed(let values):
+                    checklists(values)
                 }
-            case .processedNoValue:
-                emptyMessageView
-            case .processing:
-                loadingView
-            case .processed(let values):
-                checklists(values)
+                Divider()
+                    .background(.secondary)
             }
+            .frame(maxWidth: .infinity,
+                   maxHeight: .infinity)
+            .background(Color(UIColor.secondarySystemBackground))
         }
-        .padding()
         .onAppear {
             viewModel.getChecklists()
         }
@@ -77,12 +86,12 @@ private extension ListOfChecklistView {
                         .cornerRadius(20)
                         .overlay(
                             RoundedRectangle(cornerRadius: 20)
-                                .stroke(.blue, lineWidth: 0.2)
+                                .stroke(.blue, lineWidth: 0.5)
                         )
                     }
-                    
                 }
             }
+            .padding()
         }
     }
     

@@ -12,3 +12,5 @@ enum ChecklistType: String {
     case room = "ROOM"
     case departament = "DEPARTAMENT"
 }
+
+extension ChecklistType: Codable {}

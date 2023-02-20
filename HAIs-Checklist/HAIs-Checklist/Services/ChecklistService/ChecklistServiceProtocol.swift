@@ -9,5 +9,6 @@ import Foundation
 
 protocol ChecklistServiceProtocol {
     associatedtype ChecklistModel
+    func get() async throws -> [ChecklistModel]
     func get(by type: String) async throws -> [ChecklistModel]
 }

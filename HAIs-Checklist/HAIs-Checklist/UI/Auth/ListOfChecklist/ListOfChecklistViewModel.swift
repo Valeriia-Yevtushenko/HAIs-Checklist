@@ -19,10 +19,11 @@ class ListOfChecklistViewModel: ObservableObject {
     func getChecklists() {
         Task {
             do {
-                let checklists = try await checklistService.get(by: "") as? [Document<Checklist>] ?? []
+                var checklists = try await checklistService.get() as? [Document<Checklist>] ?? []
+                checklists = checklists.filter { $0.data.type != .user }
                 self.processable = .processed(checklists)
             } catch {
-                self.processable = .failure("Oops, somthing went wrong...")
+                self.processable = .failure("Щось пішло не так...")
             }
         }
     }

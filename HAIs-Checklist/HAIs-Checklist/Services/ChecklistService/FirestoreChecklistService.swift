@@ -17,6 +17,22 @@ class FirestoreChecklistService {
 extension FirestoreChecklistService: ChecklistServiceProtocol {
     typealias ChecklistModel = Document<Checklist>
     
+    func get() async throws -> [ChecklistModel] {
+        let querySnapshot = try await database.collection(collection)
+            .getDocuments()
+        
+        let checklists: [ChecklistModel] = querySnapshot.documents.compactMap {
+            let data = $0.data()
+            
+            guard let documetData = Checklist(from: data) else {
+                return nil
+            }
+            
+            return ChecklistModel(documentId: $0.documentID, data: documetData)
+        }
+        return checklists
+    }
+    
     func get(by type: String) async throws -> [ChecklistModel] {
         let querySnapshot = try await database.collection(collection)
             .whereField("type", isEqualTo: type)

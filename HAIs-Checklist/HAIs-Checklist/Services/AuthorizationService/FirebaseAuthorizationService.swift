@@ -17,16 +17,16 @@ class FirebaseAuthorizationService {
 }
 
 extension FirebaseAuthorizationService: AuthorizationServiceProtocol {
-    func createUser(username: String,
+    func createUser(fullname: String,
                     email: String,
                     password: String) async throws {
         let authData = try await Auth.auth().createUser(withEmail: email, password: password)
         let changeRequest = authData.user.createProfileChangeRequest()
-        changeRequest.displayName = username
+        changeRequest.displayName = fullname
         try await changeRequest.commitChanges()
         self.storageService.set(User(uid: authData.user.uid,
                                      email: email,
-                                     name: username,
+                                     fullname: fullname,
                                      password: password),
                                 key: AppKeys.user.rawValue)
     }
@@ -36,7 +36,7 @@ extension FirebaseAuthorizationService: AuthorizationServiceProtocol {
         let authData = try await Auth.auth().signIn(withEmail: email, password: password)
         self.storageService.set(User(uid: authData.user.uid,
                                      email: email,
-                                     name: authData.user.displayName ?? "",
+                                     fullname: authData.user.displayName ?? "",
                                      password: password),
                                 key: AppKeys.user.rawValue)
     }

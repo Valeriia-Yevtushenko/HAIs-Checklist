@@ -8,7 +8,7 @@
 import Foundation
 
 protocol AuthorizationServiceProtocol: AnyObject {
-    func createUser(username: String,
+    func createUser(fullname: String,
                     email: String,
                     password: String) async throws
     func signIn(email: String,

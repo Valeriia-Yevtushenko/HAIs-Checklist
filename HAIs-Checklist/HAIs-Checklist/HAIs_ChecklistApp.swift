@@ -23,7 +23,7 @@ struct HAIs_ChecklistApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ListOfChecklistView()
+            AppCoordinator()
         }
     }
 }

@@ -9,10 +9,18 @@ import Foundation
 
 class Environment {
     let checklistService: any ChecklistServiceProtocol
-    
+    let validationService: ValidationService
+    let storageService: StorageServiceProtocol
+    let authorizationService: AuthorizationServiceProtocol
+    var currentUser: User? {
+        storageService.get(key: AppKeys.user.rawValue)
+    }
     
     init() {
         checklistService = FirestoreChecklistService()
+        storageService = StorageService()
+        validationService = ValidationService()
+        authorizationService = FirebaseAuthorizationService(storageService: storageService)
     }
 }
 
