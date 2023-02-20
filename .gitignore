@@ -15,6 +15,7 @@ xcuserdata
 *.DS_Store
 
 ## Other
+**/GoogleService-Info.plist
 *.xccheckout
 *.moved-aside
 *.xcuserstate
