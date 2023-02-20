@@ -48,6 +48,15 @@ private extension SignInView {
                 .background(Color.blue)
                 .cornerRadius(10.0)
         }
+        .alert("Error", isPresented: .constant(viewModel.error != nil)) {
+            Button {
+                viewModel.error = nil
+            } label: {
+                Text("OK")
+            }
+        } message: {
+            Text(viewModel.error ?? "")
+        }
     }
     
     var iconImage: some View {

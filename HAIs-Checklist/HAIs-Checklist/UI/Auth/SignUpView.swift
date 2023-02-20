@@ -58,6 +58,16 @@ private extension SignUpView {
                 .background(Color.blue)
                 .cornerRadius(15.0)
         }
+        .alert("Error", isPresented: .constant(viewModel.error != nil)) {
+            Button {
+                viewModel.error = nil
+            } label: {
+                Text("OK")
+            }
+        } message: {
+            Text(viewModel.error ?? "")
+        }
+
     }
     
     var footer: some View {
