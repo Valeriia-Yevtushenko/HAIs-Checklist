@@ -21,39 +21,38 @@ struct ListOfChecklistView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                Spacer()
-                    .frame(height: 20)
-                Text("Оберіть чекліст")
-                    .bold()
-                    .font(.largeTitle)
-                    .padding(.bottom, 20)
-                
-                switch viewModel.processable {
-                case .failure(let error):
-                    VStack {
-                        Spacer()
-                        Image("smth-went-wrong")
-                            .resizable()
-                            .frame(width: 300, height: 300)
-                        Text(error)
-                        Spacer()
-                    }
-                case .processedNoValue:
-                    emptyMessageView
-                case .processing:
-                    loadingView
-                case .processed(let values):
-                    checklists(values)
+        VStack {
+            Spacer()
+                .frame(height: 20)
+            Text("Оберіть чекліст")
+                .bold()
+                .font(.largeTitle)
+                .padding(.bottom, 20)
+            
+            switch viewModel.processable {
+            case .failure(let error):
+                VStack {
+                    Spacer()
+                    Image("smth-went-wrong")
+                        .resizable()
+                        .frame(width: 300, height: 300)
+                    Text(error)
+                    Spacer()
                 }
-                Divider()
-                    .background(.secondary)
+            case .processedNoValue:
+                emptyMessageView
+            case .processing:
+                loadingView
+            case .processed(let values):
+                checklists(values)
             }
-            .frame(maxWidth: .infinity,
-                   maxHeight: .infinity)
-            .background(Color(UIColor.secondarySystemBackground))
+            Divider()
+                .background(.secondary)
         }
+        .frame(maxWidth: .infinity,
+               maxHeight: .infinity)
+        .background(Color(UIColor.secondarySystemBackground))
+        .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.getChecklists()
         }
@@ -66,7 +65,7 @@ private extension ListOfChecklistView {
             LazyVGrid(columns: columns) {
                 ForEach(checklists) { checklist in
                     NavigationLink {
-                        
+                        ChecklistView(checklist: checklist)
                     } label: {
                         HStack {
                             Text(checklist.data.name)
@@ -117,10 +116,18 @@ private extension ListOfChecklistView {
             Spacer()
         }
     }
-}
+    
+    var finishRevisionButton: some View {
+        Button {
 
-struct ListOfChecklistView_Previews: PreviewProvider {
-    static var previews: some View {
-        ListOfChecklistView()
+        } label: {
+            Text("Завершети перевірку")
+                .padding()
+                .frame(maxWidth: .infinity)
+                .font(.headline)
+                .foregroundColor(.white)
+                .background(Color.blue)
+                .cornerRadius(10.0)
+        }
     }
 }

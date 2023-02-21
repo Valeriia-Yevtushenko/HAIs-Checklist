@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Checklist: Codable {
+class Checklist: DatabaseModel {
     let name: String
     let image: URL?
     let questions: [String]

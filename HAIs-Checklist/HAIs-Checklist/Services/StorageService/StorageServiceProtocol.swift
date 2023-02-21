@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol StorageServiceProtocol {
+protocol StorageServiceProtocol: AnyObject {
     func set<T: Codable>(_ data: T, key: String)
     func remove(key: String)
     func get<T: Codable>(key: String) -> T?

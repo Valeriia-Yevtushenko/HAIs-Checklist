@@ -12,7 +12,7 @@ class SignInViewModel: ObservableObject {
     private let authorizationService: AuthorizationServiceProtocol
     @Published var error: String?
     
-    init(env: Environment = .current) {
+    init(env: Env = .current) {
         authorizationService = env.authorizationService
     }
     

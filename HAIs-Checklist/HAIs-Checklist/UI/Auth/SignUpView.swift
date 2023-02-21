@@ -58,7 +58,7 @@ private extension SignUpView {
                 .background(Color.blue)
                 .cornerRadius(15.0)
         }
-        .alert("Error", isPresented: .constant(viewModel.error != nil)) {
+        .alert("Помилка", isPresented: .constant(viewModel.error != nil)) {
             Button {
                 viewModel.error = nil
             } label: {

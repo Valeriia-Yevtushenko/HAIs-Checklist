@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Document<T: Codable> {
+class Document<T: DatabaseModel> {
     let documentId: String
     var data: T
     

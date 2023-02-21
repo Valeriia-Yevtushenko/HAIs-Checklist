@@ -9,22 +9,20 @@ import Foundation
 
 @MainActor
 class ListOfChecklistViewModel: ObservableObject {
-    private let checklistService: any ChecklistServiceProtocol
+    private let revisionService: RevisionServiceProtocol
     @Published var processable: Processable<[Document<Checklist>]> = .processing
     
-    init(env: Environment = .current) {
-        checklistService = env.checklistService
+    init(env: Env = .current) {
+        self.revisionService = env.revisionService
     }
     
     func getChecklists() {
-        Task {
-            do {
-                var checklists = try await checklistService.get() as? [Document<Checklist>] ?? []
-                checklists = checklists.filter { $0.data.type != .user }
-                self.processable = .processed(checklists)
-            } catch {
-                self.processable = .failure("Щось пішло не так...")
-            }
-        }
+        let checklists = revisionService.getUncompletedChecklists()
+        self.processable = .processed(checklists)
+    }
+    
+    func revisionStatus() {
+        var currentRevision = revisionService.getCurrentRevision()
+        currentRevision?.checklists
     }
 }

@@ -10,7 +10,7 @@ import SwiftUI
 struct TabViewCoordinator: View {
     var body: some View {
         TabView {
-            ListOfChecklistView()
+            GetStartedView()
                 .tabItem {
                     Label("Checklists", systemImage: "checklist.rtl")
                 }

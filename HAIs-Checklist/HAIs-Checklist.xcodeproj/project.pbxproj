@@ -13,8 +13,8 @@
 		979E8E1E29A15A350069B52E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 979E8E1D29A15A350069B52E /* GoogleService-Info.plist */; };
 		979E8E2929A166290069B52E /* Checklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E2829A166290069B52E /* Checklist.swift */; };
 		979E8E2B29A252FA0069B52E /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E2A29A252FA0069B52E /* Document.swift */; };
-		979E8E2D29A253600069B52E /* ChecklistServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E2C29A253600069B52E /* ChecklistServiceProtocol.swift */; };
-		979E8E2F29A253B40069B52E /* FirestoreChecklistService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E2E29A253B40069B52E /* FirestoreChecklistService.swift */; };
+		979E8E2D29A253600069B52E /* DatabaseServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E2C29A253600069B52E /* DatabaseServiceProtocol.swift */; };
+		979E8E2F29A253B40069B52E /* FirestoreDatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E2E29A253B40069B52E /* FirestoreDatabaseService.swift */; };
 		979E8E3229A27D030069B52E /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 979E8E3129A27D030069B52E /* SDWebImageSwiftUI */; };
 		979E8E3429A27EB20069B52E /* ListOfChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E3329A27EB20069B52E /* ListOfChecklistView.swift */; };
 		979E8E3729A27EEC0069B52E /* ListOfChecklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E3629A27EEC0069B52E /* ListOfChecklistViewModel.swift */; };
@@ -44,6 +44,16 @@
 		979E8E7429A388500069B52E /* TabViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E7329A388500069B52E /* TabViewCoordinator.swift */; };
 		979E8E7729A38DC30069B52E /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E7629A38DC30069B52E /* ProfileView.swift */; };
 		979E8E7929A38DDA0069B52E /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E7829A38DDA0069B52E /* ProfileViewModel.swift */; };
+		979E8E7C29A3B9440069B52E /* ChecklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E7B29A3B9440069B52E /* ChecklistView.swift */; };
+		979E8E7E29A3B9860069B52E /* ChecklistViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E7D29A3B9860069B52E /* ChecklistViewModel.swift */; };
+		979E8E8229A3C53E0069B52E /* СompletedСhecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E8129A3C53E0069B52E /* СompletedСhecklist.swift */; };
+		979E8E8429A3C58D0069B52E /* Revision.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E8329A3C58D0069B52E /* Revision.swift */; };
+		979E8E8729A3D5190069B52E /* GetStartedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E8629A3D5190069B52E /* GetStartedView.swift */; };
+		979E8E8A29A423A60069B52E /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E8929A423A60069B52E /* CustomTextField.swift */; };
+		979E8E8D29A4CCF40069B52E /* RevisionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E8C29A4CCF40069B52E /* RevisionService.swift */; };
+		979E8E8F29A4CD6D0069B52E /* GetStartedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E8E29A4CD6D0069B52E /* GetStartedViewModel.swift */; };
+		979E8E9129A4DD610069B52E /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E9029A4DD610069B52E /* DatabaseModel.swift */; };
+		979E8E9329A4DF150069B52E /* RevisionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E9229A4DF150069B52E /* RevisionServiceProtocol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,8 +64,8 @@
 		979E8E1D29A15A350069B52E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		979E8E2829A166290069B52E /* Checklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checklist.swift; sourceTree = "<group>"; };
 		979E8E2A29A252FA0069B52E /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
-		979E8E2C29A253600069B52E /* ChecklistServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistServiceProtocol.swift; sourceTree = "<group>"; };
-		979E8E2E29A253B40069B52E /* FirestoreChecklistService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreChecklistService.swift; sourceTree = "<group>"; };
+		979E8E2C29A253600069B52E /* DatabaseServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseServiceProtocol.swift; sourceTree = "<group>"; };
+		979E8E2E29A253B40069B52E /* FirestoreDatabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDatabaseService.swift; sourceTree = "<group>"; };
 		979E8E3329A27EB20069B52E /* ListOfChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfChecklistView.swift; sourceTree = "<group>"; };
 		979E8E3629A27EEC0069B52E /* ListOfChecklistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfChecklistViewModel.swift; sourceTree = "<group>"; };
 		979E8E3829A27F0A0069B52E /* Env.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Env.swift; sourceTree = "<group>"; };
@@ -80,6 +90,16 @@
 		979E8E7329A388500069B52E /* TabViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewCoordinator.swift; sourceTree = "<group>"; };
 		979E8E7629A38DC30069B52E /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		979E8E7829A38DDA0069B52E /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		979E8E7B29A3B9440069B52E /* ChecklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistView.swift; sourceTree = "<group>"; };
+		979E8E7D29A3B9860069B52E /* ChecklistViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChecklistViewModel.swift; sourceTree = "<group>"; };
+		979E8E8129A3C53E0069B52E /* СompletedСhecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СompletedСhecklist.swift"; sourceTree = "<group>"; };
+		979E8E8329A3C58D0069B52E /* Revision.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Revision.swift; sourceTree = "<group>"; };
+		979E8E8629A3D5190069B52E /* GetStartedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedView.swift; sourceTree = "<group>"; };
+		979E8E8929A423A60069B52E /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		979E8E8C29A4CCF40069B52E /* RevisionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionService.swift; sourceTree = "<group>"; };
+		979E8E8E29A4CD6D0069B52E /* GetStartedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewModel.swift; sourceTree = "<group>"; };
+		979E8E9029A4DD610069B52E /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
+		979E8E9229A4DF150069B52E /* RevisionServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionServiceProtocol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +160,7 @@
 		979E8E2429A165DB0069B52E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				979E8E8B29A4CCDB0069B52E /* RevisionService */,
 				979E8E6929A37B690069B52E /* ValidationService */,
 				979E8E4D29A29FB10069B52E /* StorageService */,
 				979E8E4129A29DB50069B52E /* AuthorizationService */,
@@ -166,6 +187,7 @@
 				979E8E3A29A281080069B52E /* Processable.swift */,
 				979E8E3F29A298450069B52E /* ChecklistType.swift */,
 				979E8E5529A2ABBD0069B52E /* AppKeys.swift */,
+				979E8E9029A4DD610069B52E /* DatabaseModel.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -176,6 +198,8 @@
 				979E8E2829A166290069B52E /* Checklist.swift */,
 				979E8E2A29A252FA0069B52E /* Document.swift */,
 				979E8E5729A2ABE60069B52E /* User.swift */,
+				979E8E8129A3C53E0069B52E /* СompletedСhecklist.swift */,
+				979E8E8329A3C58D0069B52E /* Revision.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -192,8 +216,8 @@
 		979E8E3E29A2979D0069B52E /* ChecklistService */ = {
 			isa = PBXGroup;
 			children = (
-				979E8E2E29A253B40069B52E /* FirestoreChecklistService.swift */,
-				979E8E2C29A253600069B52E /* ChecklistServiceProtocol.swift */,
+				979E8E2E29A253B40069B52E /* FirestoreDatabaseService.swift */,
+				979E8E2C29A253600069B52E /* DatabaseServiceProtocol.swift */,
 			);
 			path = ChecklistService;
 			sourceTree = "<group>";
@@ -250,6 +274,7 @@
 				979E8E6329A37A260069B52E /* UsernameTextField.swift */,
 				979E8E6529A37A690069B52E /* PasswordSecureField.swift */,
 				979E8E6729A37A7D0069B52E /* EmailTextField.swift */,
+				979E8E8929A423A60069B52E /* CustomTextField.swift */,
 			);
 			path = Commun;
 			sourceTree = "<group>";
@@ -265,8 +290,10 @@
 		979E8E7229A3881A0069B52E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				979E8E7529A38DAA0069B52E /* Profile */,
+				979E8E8529A3D4EE0069B52E /* GetStarted */,
+				979E8E7A29A3B9290069B52E /* Checklist */,
 				979E8E3529A27EDD0069B52E /* ListOfChecklist */,
+				979E8E7529A38DAA0069B52E /* Profile */,
 				979E8E7329A388500069B52E /* TabViewCoordinator.swift */,
 			);
 			name = Main;
@@ -280,6 +307,33 @@
 				979E8E7829A38DDA0069B52E /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		979E8E7A29A3B9290069B52E /* Checklist */ = {
+			isa = PBXGroup;
+			children = (
+				979E8E7B29A3B9440069B52E /* ChecklistView.swift */,
+				979E8E7D29A3B9860069B52E /* ChecklistViewModel.swift */,
+			);
+			path = Checklist;
+			sourceTree = "<group>";
+		};
+		979E8E8529A3D4EE0069B52E /* GetStarted */ = {
+			isa = PBXGroup;
+			children = (
+				979E8E8629A3D5190069B52E /* GetStartedView.swift */,
+				979E8E8E29A4CD6D0069B52E /* GetStartedViewModel.swift */,
+			);
+			path = GetStarted;
+			sourceTree = "<group>";
+		};
+		979E8E8B29A4CCDB0069B52E /* RevisionService */ = {
+			isa = PBXGroup;
+			children = (
+				979E8E8C29A4CCF40069B52E /* RevisionService.swift */,
+				979E8E9229A4DF150069B52E /* RevisionServiceProtocol.swift */,
+			);
+			path = RevisionService;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,27 +422,37 @@
 				979E8E3729A27EEC0069B52E /* ListOfChecklistViewModel.swift in Sources */,
 				979E8E7429A388500069B52E /* TabViewCoordinator.swift in Sources */,
 				979E8E7929A38DDA0069B52E /* ProfileViewModel.swift in Sources */,
+				979E8E8729A3D5190069B52E /* GetStartedView.swift in Sources */,
 				979E8E4329A29DF80069B52E /* AuthorizationServiceProtocol.swift in Sources */,
 				979E8E6129A379F00069B52E /* SignUpViewModel.swift in Sources */,
+				979E8E8229A3C53E0069B52E /* СompletedСhecklist.swift in Sources */,
 				979E8E2B29A252FA0069B52E /* Document.swift in Sources */,
 				979E8E6F29A37D920069B52E /* SignInViewModel.swift in Sources */,
+				979E8E8F29A4CD6D0069B52E /* GetStartedViewModel.swift in Sources */,
 				979E8E4029A298450069B52E /* ChecklistType.swift in Sources */,
 				979E8E7129A387860069B52E /* AppCoordinator.swift in Sources */,
-				979E8E2F29A253B40069B52E /* FirestoreChecklistService.swift in Sources */,
+				979E8E2F29A253B40069B52E /* FirestoreDatabaseService.swift in Sources */,
 				979E8E5F29A379C90069B52E /* SignUpView.swift in Sources */,
 				979E8E5629A2ABBD0069B52E /* AppKeys.swift in Sources */,
+				979E8E8A29A423A60069B52E /* CustomTextField.swift in Sources */,
 				979E8E6629A37A690069B52E /* PasswordSecureField.swift in Sources */,
 				979E8E7729A38DC30069B52E /* ProfileView.swift in Sources */,
+				979E8E7E29A3B9860069B52E /* ChecklistViewModel.swift in Sources */,
 				979E8E6D29A37D640069B52E /* SignInView.swift in Sources */,
+				979E8E9129A4DD610069B52E /* DatabaseModel.swift in Sources */,
 				979E8E3929A27F0A0069B52E /* Env.swift in Sources */,
 				979E8E5829A2ABE60069B52E /* User.swift in Sources */,
-				979E8E2D29A253600069B52E /* ChecklistServiceProtocol.swift in Sources */,
+				979E8E2D29A253600069B52E /* DatabaseServiceProtocol.swift in Sources */,
+				979E8E8429A3C58D0069B52E /* Revision.swift in Sources */,
 				979E8E6429A37A260069B52E /* UsernameTextField.swift in Sources */,
+				979E8E8D29A4CCF40069B52E /* RevisionService.swift in Sources */,
 				979E8E3429A27EB20069B52E /* ListOfChecklistView.swift in Sources */,
 				979E8E6B29A37B760069B52E /* ValidationService.swift in Sources */,
+				979E8E7C29A3B9440069B52E /* ChecklistView.swift in Sources */,
 				979E8E5429A2AB880069B52E /* StorageServiceProtocol.swift in Sources */,
 				979E8E05299FDADA0069B52E /* HAIs_ChecklistApp.swift in Sources */,
 				979E8E2929A166290069B52E /* Checklist.swift in Sources */,
+				979E8E9329A4DF150069B52E /* RevisionServiceProtocol.swift in Sources */,
 				979E8E6829A37A7D0069B52E /* EmailTextField.swift in Sources */,
 				979E8E3B29A281080069B52E /* Processable.swift in Sources */,
 				979E8E4529A29E0E0069B52E /* FirebaseAuthorizationService.swift in Sources */,
@@ -531,6 +595,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -561,6 +626,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

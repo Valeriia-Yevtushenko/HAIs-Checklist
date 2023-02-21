@@ -12,7 +12,7 @@ class ProfileViewModel: ObservableObject {
     @Published var error: String?
     var user: User?
     
-    init(env: Environment = .current) {
+    init(env: Env = .current) {
         user = env.currentUser
         authorizationService = env.authorizationService
     }

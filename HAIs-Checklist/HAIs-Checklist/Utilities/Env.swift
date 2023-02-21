@@ -7,23 +7,26 @@
 
 import Foundation
 
-class Environment {
-    let checklistService: any ChecklistServiceProtocol
+class Env {
+    let databaseService: any DatabaseServiceProtocol
     let validationService: ValidationService
     let storageService: StorageServiceProtocol
     let authorizationService: AuthorizationServiceProtocol
+    let revisionService: RevisionServiceProtocol
+    
     var currentUser: User? {
         storageService.get(key: AppKeys.user.rawValue)
     }
     
     init() {
-        checklistService = FirestoreChecklistService()
+        databaseService = FirestoreDatabaseService()
+        revisionService = RevisionService(databaseService: databaseService)
         storageService = StorageService()
         validationService = ValidationService()
         authorizationService = FirebaseAuthorizationService(storageService: storageService)
     }
 }
 
-extension Environment {
-    static let current = Environment()
+extension Env {
+    static let current = Env()
 }
