@@ -54,6 +54,7 @@
 		979E8E8F29A4CD6D0069B52E /* GetStartedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E8E29A4CD6D0069B52E /* GetStartedViewModel.swift */; };
 		979E8E9129A4DD610069B52E /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E9029A4DD610069B52E /* DatabaseModel.swift */; };
 		979E8E9329A4DF150069B52E /* RevisionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E9229A4DF150069B52E /* RevisionServiceProtocol.swift */; };
+		979E8E9529A526F60069B52E /* CheckPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E9429A526F60069B52E /* CheckPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -100,6 +101,7 @@
 		979E8E8E29A4CD6D0069B52E /* GetStartedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetStartedViewModel.swift; sourceTree = "<group>"; };
 		979E8E9029A4DD610069B52E /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 		979E8E9229A4DF150069B52E /* RevisionServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionServiceProtocol.swift; sourceTree = "<group>"; };
+		979E8E9429A526F60069B52E /* CheckPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,6 +202,7 @@
 				979E8E5729A2ABE60069B52E /* User.swift */,
 				979E8E8129A3C53E0069B52E /* СompletedСhecklist.swift */,
 				979E8E8329A3C58D0069B52E /* Revision.swift */,
+				979E8E9429A526F60069B52E /* CheckPoint.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				979E8E6629A37A690069B52E /* PasswordSecureField.swift in Sources */,
 				979E8E7729A38DC30069B52E /* ProfileView.swift in Sources */,
 				979E8E7E29A3B9860069B52E /* ChecklistViewModel.swift in Sources */,
+				979E8E9529A526F60069B52E /* CheckPoint.swift in Sources */,
 				979E8E6D29A37D640069B52E /* SignInView.swift in Sources */,
 				979E8E9129A4DD610069B52E /* DatabaseModel.swift in Sources */,
 				979E8E3929A27F0A0069B52E /* Env.swift in Sources */,

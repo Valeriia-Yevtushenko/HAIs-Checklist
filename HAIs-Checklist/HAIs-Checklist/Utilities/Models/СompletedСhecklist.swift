@@ -10,15 +10,20 @@ import SwiftUI
 
 class СompletedСhecklist {
     let id: String
+    let name: String
     let type: ChecklistType
-    var answers: [Answer] = []
+    var checkPoints: [CheckPoint] = []
     
-    init(id: String, type: ChecklistType, questions: [String]) {
+    init(id: String,
+         name: String,
+         type: ChecklistType,
+         questions: [String]) {
         self.id = id
         self.type = type
+        self.name =  name
         
         questions.forEach {
-            answers.append(Answer(question: $0, value: true))
+            checkPoints.append(CheckPoint(question: $0, value: true))
         }
     }
 }
@@ -31,6 +36,7 @@ class UserChecklist: СompletedСhecklist {
     var position: String
     
     init(id: String,
+         name: String,
          type: ChecklistType,
          fullname: String,
          position: String,
@@ -38,7 +44,10 @@ class UserChecklist: СompletedСhecklist {
         self.fullname = fullname
         self.position = position
         
-        super.init(id: id, type: type, questions: questions)
+        super.init(id: id,
+                   name: name,
+                   type: type,
+                   questions: questions)
     }
 }
 
@@ -46,23 +55,15 @@ class RoomChecklist: СompletedСhecklist {
     var room: String
     
     init(id: String,
+         name: String,
          type: ChecklistType,
          room: String,
          questions: [String]) {
         self.room = room
         
-        super.init(id: id, type: type, questions: questions)
+        super.init(id: id,
+                   name: name,
+                   type: type,
+                   questions: questions)
     }
 }
-
-class Answer {
-    var question: String
-    var value: Bool
-    
-    init(question: String, value: Bool) {
-        self.question = question
-        self.value = value
-    }
-}
-
-extension Answer: Identifiable {}

@@ -44,7 +44,14 @@ struct ListOfChecklistView: View {
             case .processing:
                 loadingView
             case .processed(let values):
-                checklists(values)
+                VStack {
+                    checklists(values)
+                    
+                    if viewModel.isNecessaryChecklistsFilled {
+                        finishRevisionButton
+                    }
+                }
+                .padding(20)
             }
             Divider()
                 .background(.secondary)
@@ -55,6 +62,7 @@ struct ListOfChecklistView: View {
         .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.getChecklists()
+            viewModel.checkIfNecessaryChecklistsFilled()
         }
     }
 }
@@ -90,7 +98,6 @@ private extension ListOfChecklistView {
                     }
                 }
             }
-            .padding()
         }
     }
     

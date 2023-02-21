@@ -14,3 +14,4 @@ enum ChecklistType: String {
 }
 
 extension ChecklistType: Codable {}
+extension ChecklistType: CaseIterable {}

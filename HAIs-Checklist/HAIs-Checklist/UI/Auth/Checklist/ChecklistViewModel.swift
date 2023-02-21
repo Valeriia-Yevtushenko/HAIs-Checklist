@@ -18,6 +18,7 @@ class ChecklistViewModel: ObservableObject {
         
         if checklist.data.type == .departament {
             completedСhecklist = СompletedСhecklist(id: checklist.documentId,
+                                                    name: checklist.data.name,
                                                     type: checklist.data.type,
                                                     questions: checklist.data.questions)
         }

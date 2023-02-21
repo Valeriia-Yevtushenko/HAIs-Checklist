@@ -31,6 +31,9 @@ struct ChecklistView: View {
                 case .user:
                     userGeneralInfo
                 case .departament:
+                    Text(viewModel.completedСhecklist.name)
+                        .bold()
+                        .font(.title2)
                     questions
                 }
             }
@@ -61,6 +64,7 @@ private extension ChecklistView {
             Button {
                 let checklist = viewModel.checklist
                 viewModel.completedСhecklist = UserChecklist(id: checklist.documentId,
+                                                             name: checklist.data.name,
                                                              type: checklist.data.type,
                                                              fullname: fullname,
                                                              position: position,
@@ -95,6 +99,7 @@ private extension ChecklistView {
             Button {
                 let checklist = viewModel.checklist
                 viewModel.completedСhecklist = RoomChecklist(id: checklist.documentId,
+                                                             name: checklist.data.name,
                                                              type: checklist.data.type,
                                                              room: room,
                                                              questions: checklist.data.questions)
@@ -115,11 +120,11 @@ private extension ChecklistView {
     
     var questions: some View {
         ScrollView {
-            ForEach($viewModel.completedСhecklist.answers) { answer in
+            ForEach($viewModel.completedСhecklist.checkPoints) { checkPoint in
                 HStack(alignment: .center) {
-                    Text(answer.question.wrappedValue)
+                    Text(checkPoint.question.wrappedValue)
                     Spacer()
-                    Picker("", selection: answer.value) {
+                    Picker("", selection: checkPoint.value) {
                         Text("Так").tag(true)
                         Text("Ні").tag(false)
                     }
