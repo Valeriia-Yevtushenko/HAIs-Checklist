@@ -55,6 +55,12 @@
 		979E8E9129A4DD610069B52E /* DatabaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E9029A4DD610069B52E /* DatabaseModel.swift */; };
 		979E8E9329A4DF150069B52E /* RevisionServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E9229A4DF150069B52E /* RevisionServiceProtocol.swift */; };
 		979E8E9529A526F60069B52E /* CheckPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E9429A526F60069B52E /* CheckPoint.swift */; };
+		97F7769029B39D0200E0E9F8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F7768F29B39D0200E0E9F8 /* SettingsView.swift */; };
+		97F7769329B3AA1800E0E9F8 /* ChangeEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F7769229B3AA1800E0E9F8 /* ChangeEmailView.swift */; };
+		97F7769529B3AA5800E0E9F8 /* ChangeEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F7769429B3AA5800E0E9F8 /* ChangeEmailViewModel.swift */; };
+		97F7769829B3ABA600E0E9F8 /* ChangePasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F7769729B3ABA600E0E9F8 /* ChangePasswordView.swift */; };
+		97F7769A29B3ABC600E0E9F8 /* ChangePasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F7769929B3ABC600E0E9F8 /* ChangePasswordViewModel.swift */; };
+		97F7769C29B3ABF600E0E9F8 /* ChangePasswordError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97F7769B29B3ABF600E0E9F8 /* ChangePasswordError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +108,12 @@
 		979E8E9029A4DD610069B52E /* DatabaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseModel.swift; sourceTree = "<group>"; };
 		979E8E9229A4DF150069B52E /* RevisionServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionServiceProtocol.swift; sourceTree = "<group>"; };
 		979E8E9429A526F60069B52E /* CheckPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPoint.swift; sourceTree = "<group>"; };
+		97F7768F29B39D0200E0E9F8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		97F7769229B3AA1800E0E9F8 /* ChangeEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailView.swift; sourceTree = "<group>"; };
+		97F7769429B3AA5800E0E9F8 /* ChangeEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeEmailViewModel.swift; sourceTree = "<group>"; };
+		97F7769729B3ABA600E0E9F8 /* ChangePasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordView.swift; sourceTree = "<group>"; };
+		97F7769929B3ABC600E0E9F8 /* ChangePasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewModel.swift; sourceTree = "<group>"; };
+		97F7769B29B3ABF600E0E9F8 /* ChangePasswordError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +202,7 @@
 				979E8E3F29A298450069B52E /* ChecklistType.swift */,
 				979E8E5529A2ABBD0069B52E /* AppKeys.swift */,
 				979E8E9029A4DD610069B52E /* DatabaseModel.swift */,
+				97F7769B29B3ABF600E0E9F8 /* ChangePasswordError.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -296,6 +309,9 @@
 				979E8E8529A3D4EE0069B52E /* GetStarted */,
 				979E8E7A29A3B9290069B52E /* Checklist */,
 				979E8E3529A27EDD0069B52E /* ListOfChecklist */,
+				97F7769129B3AA0500E0E9F8 /* ChangeEmail */,
+				97F7769629B3AB7E00E0E9F8 /* ChangePassword */,
+				97F7768E29B39CE400E0E9F8 /* Settings */,
 				979E8E7529A38DAA0069B52E /* Profile */,
 				979E8E7329A388500069B52E /* TabViewCoordinator.swift */,
 			);
@@ -337,6 +353,32 @@
 				979E8E9229A4DF150069B52E /* RevisionServiceProtocol.swift */,
 			);
 			path = RevisionService;
+			sourceTree = "<group>";
+		};
+		97F7768E29B39CE400E0E9F8 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				97F7768F29B39D0200E0E9F8 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		97F7769129B3AA0500E0E9F8 /* ChangeEmail */ = {
+			isa = PBXGroup;
+			children = (
+				97F7769229B3AA1800E0E9F8 /* ChangeEmailView.swift */,
+				97F7769429B3AA5800E0E9F8 /* ChangeEmailViewModel.swift */,
+			);
+			path = ChangeEmail;
+			sourceTree = "<group>";
+		};
+		97F7769629B3AB7E00E0E9F8 /* ChangePassword */ = {
+			isa = PBXGroup;
+			children = (
+				97F7769729B3ABA600E0E9F8 /* ChangePasswordView.swift */,
+				97F7769929B3ABC600E0E9F8 /* ChangePasswordViewModel.swift */,
+			);
+			path = ChangePassword;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -427,7 +469,10 @@
 				979E8E7929A38DDA0069B52E /* ProfileViewModel.swift in Sources */,
 				979E8E8729A3D5190069B52E /* GetStartedView.swift in Sources */,
 				979E8E4329A29DF80069B52E /* AuthorizationServiceProtocol.swift in Sources */,
+				97F7769529B3AA5800E0E9F8 /* ChangeEmailViewModel.swift in Sources */,
+				97F7769029B39D0200E0E9F8 /* SettingsView.swift in Sources */,
 				979E8E6129A379F00069B52E /* SignUpViewModel.swift in Sources */,
+				97F7769329B3AA1800E0E9F8 /* ChangeEmailView.swift in Sources */,
 				979E8E8229A3C53E0069B52E /* СompletedСhecklist.swift in Sources */,
 				979E8E2B29A252FA0069B52E /* Document.swift in Sources */,
 				979E8E6F29A37D920069B52E /* SignInViewModel.swift in Sources */,
@@ -442,6 +487,7 @@
 				979E8E7729A38DC30069B52E /* ProfileView.swift in Sources */,
 				979E8E7E29A3B9860069B52E /* ChecklistViewModel.swift in Sources */,
 				979E8E9529A526F60069B52E /* CheckPoint.swift in Sources */,
+				97F7769829B3ABA600E0E9F8 /* ChangePasswordView.swift in Sources */,
 				979E8E6D29A37D640069B52E /* SignInView.swift in Sources */,
 				979E8E9129A4DD610069B52E /* DatabaseModel.swift in Sources */,
 				979E8E3929A27F0A0069B52E /* Env.swift in Sources */,
@@ -455,9 +501,11 @@
 				979E8E7C29A3B9440069B52E /* ChecklistView.swift in Sources */,
 				979E8E5429A2AB880069B52E /* StorageServiceProtocol.swift in Sources */,
 				979E8E05299FDADA0069B52E /* HAIs_ChecklistApp.swift in Sources */,
+				97F7769C29B3ABF600E0E9F8 /* ChangePasswordError.swift in Sources */,
 				979E8E2929A166290069B52E /* Checklist.swift in Sources */,
 				979E8E9329A4DF150069B52E /* RevisionServiceProtocol.swift in Sources */,
 				979E8E6829A37A7D0069B52E /* EmailTextField.swift in Sources */,
+				97F7769A29B3ABC600E0E9F8 /* ChangePasswordViewModel.swift in Sources */,
 				979E8E3B29A281080069B52E /* Processable.swift in Sources */,
 				979E8E4529A29E0E0069B52E /* FirebaseAuthorizationService.swift in Sources */,
 				979E8E5B29A3798B0069B52E /* AuthCoordinator.swift in Sources */,

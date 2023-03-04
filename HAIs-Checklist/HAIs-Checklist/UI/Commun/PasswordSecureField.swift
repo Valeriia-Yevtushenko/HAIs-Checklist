@@ -9,9 +9,10 @@ import SwiftUI
 
 struct PasswordSecureField: View {
     @Binding var password: String
-        
+    var placeholder: String
+    
     var body: some View {
-        SecureField("Пароль", text: $password)
+        SecureField(placeholder, text: $password)
             .padding()
             .background(Color(uiColor: .systemGray6))
             .cornerRadius(5.0)

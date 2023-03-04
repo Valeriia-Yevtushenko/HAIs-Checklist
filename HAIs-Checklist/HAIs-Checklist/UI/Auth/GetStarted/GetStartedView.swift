@@ -21,32 +21,30 @@ struct GetStartedView: View {
     }
     
     var body: some View {
-        NavigationStack {
-            VStack {
-                Spacer()
-                    .frame(height: 30.0)
-                
-                Text("Визначення ризику ІПДМ")
-                    .font(.title2)
-                    .bold()
-                Spacer()
-                Image("revision")
-                    .resizable()
-                    .frame(width: iconWidth, height: iconHeight)
-                    .cornerRadius(10.0)
-                Spacer()
-                
-                getStartedButton
+        VStack {
+            Spacer()
+                .frame(height: 30.0)
+            
+            Text("Визначення ризику ІПДМ")
+                .font(.title2)
+                .bold()
+            Spacer()
+            Image("revision")
+                .resizable()
+                .frame(width: iconWidth, height: iconHeight)
+                .cornerRadius(10.0)
+            Spacer()
+            
+            getStartedButton
 
-                Divider().background(.secondary)
-            }
-            .padding()
-            .frame(maxWidth: .infinity,
-                   maxHeight: .infinity)
-            .background(Color(UIColor.secondarySystemBackground))
-            .navigationDestination(isPresented: $isPresentedRevision) {
-                ListOfChecklistView()
-            }
+            Divider().background(.secondary)
+        }
+        .padding()
+        .frame(maxWidth: .infinity,
+               maxHeight: .infinity)
+        .background(Color(UIColor.secondarySystemBackground))
+        .navigationDestination(isPresented: $isPresentedRevision) {
+            ListOfChecklistView()
         }
     }
 }

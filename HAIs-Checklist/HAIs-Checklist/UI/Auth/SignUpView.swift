@@ -24,7 +24,7 @@ struct SignUpView: View {
             iconImage
             FullnameTextField(fullname: $fullname)
             EmailTextField(email: $email)
-            PasswordSecureField(password: $password)
+            PasswordSecureField(password: $password, placeholder: "Пароль")
             
             signUpButton
             

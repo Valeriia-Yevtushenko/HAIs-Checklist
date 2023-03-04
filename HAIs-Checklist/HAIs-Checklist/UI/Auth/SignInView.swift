@@ -22,7 +22,7 @@ struct SignInView: View {
         VStack {
             iconImage
             EmailTextField(email: $email)
-            PasswordSecureField(password: $password)
+            PasswordSecureField(password: $password, placeholder: "Пароль")
             signInButton
             
             Spacer()

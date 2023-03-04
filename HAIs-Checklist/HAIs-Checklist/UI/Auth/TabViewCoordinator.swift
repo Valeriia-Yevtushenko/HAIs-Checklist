@@ -10,14 +10,20 @@ import SwiftUI
 struct TabViewCoordinator: View {
     var body: some View {
         TabView {
-            GetStartedView()
-                .tabItem {
-                    Label("Checklists", systemImage: "checklist.rtl")
-                }
-            ProfileView()
-                .tabItem {
-                    Label("Account", systemImage: "person.crop.circle.fill")
-                }
+            NavigationStack {
+                GetStartedView()
+            }
+            .tabItem {
+                Label("Checklists", systemImage: "checklist.rtl")
+            }
+                
+            NavigationStack {
+                ProfileView()
+            }
+            .tabItem {
+                Label("Account", systemImage: "person.crop.circle.fill")
+            }
+                
         }
         .onAppear {
             UITabBar.appearance().backgroundColor = .secondarySystemBackground

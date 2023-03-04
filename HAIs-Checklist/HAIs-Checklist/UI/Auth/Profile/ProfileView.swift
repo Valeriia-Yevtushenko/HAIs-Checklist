@@ -45,7 +45,7 @@ private extension ProfileView {
     var options: some View {
         Group {
             NavigationLink {
-                
+                SettingsView()
             } label: {
                 HStack {
                     Image(systemName: "gear.circle")
