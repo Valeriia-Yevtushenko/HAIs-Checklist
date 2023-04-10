@@ -9,9 +9,9 @@ import Foundation
 
 class CheckPoint {
     var question: String
-    var value: Bool
+    var value: Int
     
-    init(question: String, value: Bool) {
+    init(question: String, value: Int) {
         self.question = question
         self.value = value
     }

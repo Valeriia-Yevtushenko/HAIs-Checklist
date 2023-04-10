@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9747779929E4319000D05C44 /* RevisionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779829E4319000D05C44 /* RevisionResultView.swift */; };
+		9747779B29E431B100D05C44 /* RevisionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */; };
+		9747779E29E4ABED00D05C44 /* RevisionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779D29E4ABED00D05C44 /* RevisionResult.swift */; };
 		979E8E05299FDADA0069B52E /* HAIs_ChecklistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E04299FDADA0069B52E /* HAIs_ChecklistApp.swift */; };
 		979E8E09299FDADC0069B52E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 979E8E08299FDADC0069B52E /* Assets.xcassets */; };
 		979E8E0C299FDADC0069B52E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 979E8E0B299FDADC0069B52E /* Preview Assets.xcassets */; };
@@ -64,6 +67,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9747779829E4319000D05C44 /* RevisionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResultView.swift; sourceTree = "<group>"; };
+		9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResultViewModel.swift; sourceTree = "<group>"; };
+		9747779D29E4ABED00D05C44 /* RevisionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResult.swift; sourceTree = "<group>"; };
 		979E8E01299FDADA0069B52E /* HAIs-Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HAIs-Checklist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		979E8E04299FDADA0069B52E /* HAIs_ChecklistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAIs_ChecklistApp.swift; sourceTree = "<group>"; };
 		979E8E08299FDADC0069B52E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +138,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9747779729E4317300D05C44 /* RevisionResultView */ = {
+			isa = PBXGroup;
+			children = (
+				9747779829E4319000D05C44 /* RevisionResultView.swift */,
+				9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */,
+			);
+			path = RevisionResultView;
+			sourceTree = "<group>";
+		};
 		979E8DF8299FDADA0069B52E = {
 			isa = PBXGroup;
 			children = (
@@ -178,7 +193,7 @@
 				979E8E6929A37B690069B52E /* ValidationService */,
 				979E8E4D29A29FB10069B52E /* StorageService */,
 				979E8E4129A29DB50069B52E /* AuthorizationService */,
-				979E8E3E29A2979D0069B52E /* ChecklistService */,
+				979E8E3E29A2979D0069B52E /* DatabaseService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +218,7 @@
 				979E8E5529A2ABBD0069B52E /* AppKeys.swift */,
 				979E8E9029A4DD610069B52E /* DatabaseModel.swift */,
 				97F7769B29B3ABF600E0E9F8 /* ChangePasswordError.swift */,
+				9747779D29E4ABED00D05C44 /* RevisionResult.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -229,13 +245,13 @@
 			path = ListOfChecklist;
 			sourceTree = "<group>";
 		};
-		979E8E3E29A2979D0069B52E /* ChecklistService */ = {
+		979E8E3E29A2979D0069B52E /* DatabaseService */ = {
 			isa = PBXGroup;
 			children = (
 				979E8E2E29A253B40069B52E /* FirestoreDatabaseService.swift */,
 				979E8E2C29A253600069B52E /* DatabaseServiceProtocol.swift */,
 			);
-			path = ChecklistService;
+			path = DatabaseService;
 			sourceTree = "<group>";
 		};
 		979E8E4129A29DB50069B52E /* AuthorizationService */ = {
@@ -306,6 +322,7 @@
 		979E8E7229A3881A0069B52E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9747779729E4317300D05C44 /* RevisionResultView */,
 				979E8E8529A3D4EE0069B52E /* GetStarted */,
 				979E8E7A29A3B9290069B52E /* Checklist */,
 				979E8E3529A27EDD0069B52E /* ListOfChecklist */,
@@ -465,12 +482,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				979E8E3729A27EEC0069B52E /* ListOfChecklistViewModel.swift in Sources */,
+				9747779929E4319000D05C44 /* RevisionResultView.swift in Sources */,
+				9747779B29E431B100D05C44 /* RevisionResultViewModel.swift in Sources */,
 				979E8E7429A388500069B52E /* TabViewCoordinator.swift in Sources */,
 				979E8E7929A38DDA0069B52E /* ProfileViewModel.swift in Sources */,
 				979E8E8729A3D5190069B52E /* GetStartedView.swift in Sources */,
 				979E8E4329A29DF80069B52E /* AuthorizationServiceProtocol.swift in Sources */,
 				97F7769529B3AA5800E0E9F8 /* ChangeEmailViewModel.swift in Sources */,
 				97F7769029B39D0200E0E9F8 /* SettingsView.swift in Sources */,
+				9747779E29E4ABED00D05C44 /* RevisionResult.swift in Sources */,
 				979E8E6129A379F00069B52E /* SignUpViewModel.swift in Sources */,
 				97F7769329B3AA1800E0E9F8 /* ChangeEmailView.swift in Sources */,
 				979E8E8229A3C53E0069B52E /* СompletedСhecklist.swift in Sources */,

@@ -11,5 +11,6 @@ protocol RevisionServiceProtocol: AnyObject {
     func getCurrentRevision() -> Revision? 
     func startRevision(departament: String) async throws
     func getUncompletedChecklists() -> [Document<Checklist>]
-    func addCompletedChecklist(_ checklist: СompletedСhecklist)
+    func addCompletedChecklist(_ checklist: CompletedChecklist)
+    func getRevisionResult() -> RevisionResult
 }

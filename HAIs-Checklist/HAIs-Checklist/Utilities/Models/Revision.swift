@@ -9,7 +9,7 @@ import Foundation
 
 class Revision: ObservableObject {
     let departament: String
-    var checklists: [СompletedСhecklist] = []
+    var checklists: [CompletedChecklist] = []
     
     init(departament: String) {
         self.departament = departament

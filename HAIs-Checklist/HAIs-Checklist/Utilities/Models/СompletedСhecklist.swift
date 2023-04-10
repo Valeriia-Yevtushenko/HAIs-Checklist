@@ -8,11 +8,12 @@
 import Foundation
 import SwiftUI
 
-class СompletedСhecklist {
+class CompletedChecklist {
     let id: String
     let name: String
     let type: ChecklistType
     var checkPoints: [CheckPoint] = []
+    var recommendation: String = ""
     
     init(id: String,
          name: String,
@@ -23,15 +24,23 @@ class СompletedСhecklist {
         self.name =  name
         
         questions.forEach {
-            checkPoints.append(CheckPoint(question: $0, value: true))
+            checkPoints.append(CheckPoint(question: $0, value: 1))
         }
     }
 }
 
-extension СompletedСhecklist: ObservableObject {}
-extension СompletedСhecklist: Identifiable {}
+extension CompletedChecklist {
+    var percent: Double {
+        let checklistSum = checkPoints.reduce(0) { $0 + $1.value }
+        let percent: Double = Double(checklistSum) / Double(checkPoints.count)
+        return percent
+    }
+}
 
-class UserChecklist: СompletedСhecklist {
+extension CompletedChecklist: ObservableObject {}
+extension CompletedChecklist: Identifiable {}
+
+class UserChecklist: CompletedChecklist {
     var fullname: String
     var position: String
     
@@ -51,7 +60,7 @@ class UserChecklist: СompletedСhecklist {
     }
 }
 
-class RoomChecklist: СompletedСhecklist {
+class RoomChecklist: CompletedChecklist {
     var room: String
     
     init(id: String,
