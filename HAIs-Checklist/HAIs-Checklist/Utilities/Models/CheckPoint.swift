@@ -7,11 +7,21 @@
 
 import Foundation
 
-class CheckPoint {
+class CheckPoint: DatabaseModel {
     var question: String
     var value: Int
     
     init(question: String, value: Int) {
+        self.question = question
+        self.value = value
+    }
+    
+    required init?(from dict: [String : Any]) {
+        guard let question = dict["question"] as? String,
+              let value = dict["value"] as? Int else {
+            return nil
+        }
+        
         self.question = question
         self.value = value
     }

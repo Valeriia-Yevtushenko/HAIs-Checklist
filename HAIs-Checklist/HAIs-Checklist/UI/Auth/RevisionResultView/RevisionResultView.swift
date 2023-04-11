@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct RevisionResultView: View {
-    private let height: CGFloat = UIScreen.main.bounds.height/1.2
+    private let height: CGFloat = UIScreen.main.bounds.height / 1.1
     @StateObject var viewModel: RevisionResultViewModel
+    @State var backToRootView: Bool = false
+    @State var isPresentedErrorAlert: Bool = false
     
     init() {
         _viewModel = .init(wrappedValue: RevisionResultViewModel())
@@ -35,6 +37,7 @@ struct RevisionResultView: View {
         .navigationBarBackButtonHidden(true)
         .onAppear {
             viewModel.getResult()
+            viewModel.getCurrentRevision()
         }
     }
 }
@@ -50,6 +53,7 @@ private extension RevisionResultView {
                 .font(.title2)
                 .bold()
             Spacer()
+            detailesButton
             finishButton
         }
         .padding()
@@ -72,6 +76,7 @@ private extension RevisionResultView {
                 }
                 .frame(minWidth: 300)
                 Spacer()
+                detailesButton
                 finishButton
             }
             .padding(.horizontal, 20)
@@ -91,9 +96,30 @@ private extension RevisionResultView {
             )
     }
     
+    var detailesButton: some View {
+        NavigationLink {
+            RevisionDetaliesView(revision: viewModel.currentRevision)
+        } label: {
+            Text("Детальна інформація")
+                .padding()
+                .frame(maxWidth: .infinity)
+                .font(.headline)
+                .foregroundColor(.white)
+                .background(.blue)
+                .cornerRadius(10.0)
+        }
+    }
+    
     var finishButton: some View {
         Button {
-            
+            Task {
+                do {
+                    try await viewModel.saveRevisionResult()
+                    backToRootView = true
+                } catch {
+                    isPresentedErrorAlert = true
+                }
+            }
         } label: {
             Text("Завершети перевірку")
                 .padding()
@@ -102,6 +128,26 @@ private extension RevisionResultView {
                 .foregroundColor(.white)
                 .background(.red)
                 .cornerRadius(10.0)
+        }
+        .navigationDestination(isPresented: $backToRootView) {
+            GetStartedView()
+        }
+        .alert("Сталася помилка, данні не буди збережені, перевірте з'єдання.", isPresented: $isPresentedErrorAlert) {
+            Button("Повторити спробу") {
+                isPresentedErrorAlert = false
+                Task {
+                    do {
+                        try await viewModel.saveRevisionResult()
+                    } catch {
+                        isPresentedErrorAlert = true
+                    }
+                }
+            }
+            
+            Button("Всеодно завершити") {
+                isPresentedErrorAlert = false
+                backToRootView = true
+            }
         }
     }
 }

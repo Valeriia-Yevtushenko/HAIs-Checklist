@@ -29,4 +29,22 @@ extension FirestoreDatabaseService: DatabaseServiceProtocol {
         }
         return checklists
     }
+    
+    func create(to collection: String, document: DatabaseModel) async throws {
+        return try await withCheckedThrowingContinuation { continuation in
+            let documentId = UUID().uuidString
+            do {
+                try database.collection(collection).document(documentId).setData(from: document, completion: { error in
+                    guard let error = error else {
+                        continuation.resume()
+                        return
+                    }
+                    
+                    continuation.resume(throwing: error)
+                })
+            } catch {
+                continuation.resume(throwing: error)
+            }
+        }
+    }
 }

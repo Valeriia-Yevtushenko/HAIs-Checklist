@@ -26,7 +26,9 @@ class ChecklistViewModel: ObservableObject {
     
     func addCompletedChecklist() {
         let percent = completedСhecklist.percent
-        let recommendation: String = checklist.data.recommendations.first { $0.range.contains(percent) }?.text ?? ""
+        let recommendation: String = checklist.data.recommendations.first {
+            $0.range.contains(percent)
+        }?.text ?? ""
         completedСhecklist.recommendation = recommendation
         revisionService.addCompletedChecklist(completedСhecklist)
     }

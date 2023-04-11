@@ -10,6 +10,7 @@
 		9747779929E4319000D05C44 /* RevisionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779829E4319000D05C44 /* RevisionResultView.swift */; };
 		9747779B29E431B100D05C44 /* RevisionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */; };
 		9747779E29E4ABED00D05C44 /* RevisionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779D29E4ABED00D05C44 /* RevisionResult.swift */; };
+		974777A129E56C6300D05C44 /* RevisionDetaliesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974777A029E56C6300D05C44 /* RevisionDetaliesView.swift */; };
 		979E8E05299FDADA0069B52E /* HAIs_ChecklistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E04299FDADA0069B52E /* HAIs_ChecklistApp.swift */; };
 		979E8E09299FDADC0069B52E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 979E8E08299FDADC0069B52E /* Assets.xcassets */; };
 		979E8E0C299FDADC0069B52E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 979E8E0B299FDADC0069B52E /* Preview Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		9747779829E4319000D05C44 /* RevisionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResultView.swift; sourceTree = "<group>"; };
 		9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResultViewModel.swift; sourceTree = "<group>"; };
 		9747779D29E4ABED00D05C44 /* RevisionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResult.swift; sourceTree = "<group>"; };
+		974777A029E56C6300D05C44 /* RevisionDetaliesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionDetaliesView.swift; sourceTree = "<group>"; };
 		979E8E01299FDADA0069B52E /* HAIs-Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HAIs-Checklist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		979E8E04299FDADA0069B52E /* HAIs_ChecklistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAIs_ChecklistApp.swift; sourceTree = "<group>"; };
 		979E8E08299FDADC0069B52E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +147,14 @@
 				9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */,
 			);
 			path = RevisionResultView;
+			sourceTree = "<group>";
+		};
+		9747779F29E56C4F00D05C44 /* RevisionDetaliesView */ = {
+			isa = PBXGroup;
+			children = (
+				974777A029E56C6300D05C44 /* RevisionDetaliesView.swift */,
+			);
+			path = RevisionDetaliesView;
 			sourceTree = "<group>";
 		};
 		979E8DF8299FDADA0069B52E = {
@@ -322,6 +332,7 @@
 		979E8E7229A3881A0069B52E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				9747779F29E56C4F00D05C44 /* RevisionDetaliesView */,
 				9747779729E4317300D05C44 /* RevisionResultView */,
 				979E8E8529A3D4EE0069B52E /* GetStarted */,
 				979E8E7A29A3B9290069B52E /* Checklist */,
@@ -507,6 +518,7 @@
 				979E8E7729A38DC30069B52E /* ProfileView.swift in Sources */,
 				979E8E7E29A3B9860069B52E /* ChecklistViewModel.swift in Sources */,
 				979E8E9529A526F60069B52E /* CheckPoint.swift in Sources */,
+				974777A129E56C6300D05C44 /* RevisionDetaliesView.swift in Sources */,
 				97F7769829B3ABA600E0E9F8 /* ChangePasswordView.swift in Sources */,
 				979E8E6D29A37D640069B52E /* SignInView.swift in Sources */,
 				979E8E9129A4DD610069B52E /* DatabaseModel.swift in Sources */,

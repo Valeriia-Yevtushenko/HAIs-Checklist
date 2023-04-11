@@ -56,9 +56,20 @@ class RevisionService: RevisionServiceProtocol {
         generalPercent /= Double(checklists.count)
         
         if generalPercent >= 30 {
+            currentRevision?.result = .failure
             return .failure
         }
         
+        currentRevision?.result = .success
         return .success
+    }
+    
+    func saveRevision() async throws {
+        guard let currentRevision = currentRevision else {
+            return
+        }
+        
+        try await databaseService.create(to: "revisions", document: currentRevision)
+        self.currentRevision = nil
     }
 }

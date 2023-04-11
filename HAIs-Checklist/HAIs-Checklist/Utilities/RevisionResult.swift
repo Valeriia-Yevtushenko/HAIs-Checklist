@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RevisionResult {
+enum RevisionResult: String, Codable {
     case success
     case failure
     case none

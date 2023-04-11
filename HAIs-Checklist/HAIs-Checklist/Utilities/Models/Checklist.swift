@@ -39,7 +39,9 @@ class Checklist: DatabaseModel {
         self.image = URL(string: image)
         self.questions = questions
         self.type = ChecklistType(rawValue: type) ?? .departament
-        self.recommendations = recommendations.compactMap { Recommendation(from: $0) }
+        self.recommendations = recommendations.compactMap {
+            Recommendation(from: $0)
+        }
     }
 }
 

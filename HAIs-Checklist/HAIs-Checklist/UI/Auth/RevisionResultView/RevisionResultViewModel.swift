@@ -10,6 +10,7 @@ import Foundation
 class RevisionResultViewModel: ObservableObject {
     private let revisionService: RevisionServiceProtocol
     @Published var result: RevisionResult = .none
+    var currentRevision: Revision!
     
     init(env: Env = .current) {
         self.revisionService = env.revisionService
@@ -17,5 +18,18 @@ class RevisionResultViewModel: ObservableObject {
     
     func getResult() {
         result = revisionService.getRevisionResult()
+    }
+    
+    func getCurrentRevision() {
+        guard let revision = revisionService.getCurrentRevision() else {
+            return
+        }
+        
+        currentRevision = revision
+    }
+    
+    
+    func saveRevisionResult() async throws {
+        try await revisionService.saveRevision()
     }
 }
