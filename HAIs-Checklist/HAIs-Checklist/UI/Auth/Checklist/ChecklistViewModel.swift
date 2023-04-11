@@ -17,7 +17,7 @@ class ChecklistViewModel: ObservableObject {
         self.revisionService = env.revisionService
         
         if checklist.data.type == .departament {
-            completedСhecklist = CompletedChecklist(id: checklist.documentId,
+            completedСhecklist = CompletedChecklist(checklistId: checklist.documentId,
                                                     name: checklist.data.name,
                                                     type: checklist.data.type,
                                                     questions: checklist.data.questions)

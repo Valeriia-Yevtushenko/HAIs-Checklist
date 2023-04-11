@@ -21,15 +21,30 @@ class RevisionService: RevisionServiceProtocol {
         uncompletedChecklists = try await databaseService.get(from: "checklists")
     }
     
-    func addCompletedChecklist(_ checklist: CompletedChecklist) {
-        currentRevision?.checklists.append(checklist)
+    func addCompletedChecklist(_ value: CompletedChecklist) {
+        switch value.type{
+        case .user:
+            guard let checklist = value as? UserChecklist else {
+                return
+            }
+            
+            currentRevision?.userChecklists.append(checklist)
+        case .room:
+            guard let checklist = value as? RoomChecklist else {
+                return
+            }
+            
+            currentRevision?.roomChecklists.append(checklist)
+        case .departament:
+            currentRevision?.departamentChecklists.append(value)
+        }
         
-        guard checklist.type == .departament else {
+        guard value.type == .departament else {
             return
         }
         
         let index = uncompletedChecklists.firstIndex {
-            $0.documentId == checklist.id
+            $0.documentId == value.checklistId
         }
         
         guard let index = index else {
@@ -69,6 +84,7 @@ class RevisionService: RevisionServiceProtocol {
             return
         }
         
+        currentRevision.date = .now
         try await databaseService.create(to: "revisions", document: currentRevision)
         self.currentRevision = nil
     }

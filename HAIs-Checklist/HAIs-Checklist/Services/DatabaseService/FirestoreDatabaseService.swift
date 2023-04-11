@@ -19,7 +19,11 @@ extension FirestoreDatabaseService: DatabaseServiceProtocol {
             .getDocuments()
         
         let checklists: [Document<T>] = querySnapshot.documents.compactMap {
-            let data = $0.data()
+            var data = $0.data()
+            
+            if let date = data["date"] as? Timestamp {
+                data["date"] = date.dateValue()
+            }
             
             guard let documetData = T(from: data) else {
                 return nil
@@ -27,24 +31,12 @@ extension FirestoreDatabaseService: DatabaseServiceProtocol {
             
             return Document<T>(documentId: $0.documentID, data: documetData)
         }
+        
         return checklists
     }
     
     func create(to collection: String, document: DatabaseModel) async throws {
-        return try await withCheckedThrowingContinuation { continuation in
-            let documentId = UUID().uuidString
-            do {
-                try database.collection(collection).document(documentId).setData(from: document, completion: { error in
-                    guard let error = error else {
-                        continuation.resume()
-                        return
-                    }
-                    
-                    continuation.resume(throwing: error)
-                })
-            } catch {
-                continuation.resume(throwing: error)
-            }
-        }
+        let documentId = UUID().uuidString
+        try await database.collection(collection).document(documentId).setData(document.dict)
     }
 }

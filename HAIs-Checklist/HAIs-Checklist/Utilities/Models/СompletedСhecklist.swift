@@ -10,16 +10,18 @@ import SwiftUI
 
 class CompletedChecklist: DatabaseModel {
     let id: String
+    let checklistId: String
     let name: String
     let type: ChecklistType
     var checkPoints: [CheckPoint] = []
     var recommendation: String = ""
     
-    init(id: String,
+    init(checklistId: String,
          name: String,
          type: ChecklistType,
          questions: [String]) {
-        self.id = id
+        self.id = UUID().uuidString
+        self.checklistId = checklistId
         self.type = type
         self.name =  name
         
@@ -30,6 +32,7 @@ class CompletedChecklist: DatabaseModel {
     
     required init?(from dict: [String : Any]) {
         guard let name = dict["name"] as? String,
+              let checklistId = dict["checklistId"] as? String,
               let id = dict["id"] as? String,
               let recommendation = dict["recommendation"] as? String,
               let type = dict["type"] as? String,
@@ -39,18 +42,32 @@ class CompletedChecklist: DatabaseModel {
         
         self.name = name
         self.id = id
+        self.checklistId = checklistId
         self.recommendation = recommendation
         self.type = ChecklistType(rawValue: type) ?? .departament
         self.checkPoints = checkPoints.compactMap {
             CheckPoint(from: $0)
         }
     }
+    
+    var dict: [String : Any] {
+        [
+            "name": name,
+            "id": id,
+            "checklistId": checklistId,
+            "type": type.rawValue,
+            "recommendation": recommendation,
+            "checkPoints": checkPoints.map { $0.dict }
+        ]
+    }
 }
 
 extension CompletedChecklist {
     var percent: Double {
         let checklistSum = checkPoints.reduce(0) { $0 + $1.value }
-        let percent: Double = Double(checklistSum) / Double(checkPoints.count)
+        let maxPossibleValue = 25 * checkPoints.count
+        var percent: Double = Double(checklistSum) / Double(maxPossibleValue)
+        percent *= 100
         return percent
     }
 }
@@ -62,7 +79,7 @@ class UserChecklist: CompletedChecklist {
     var fullname: String
     var position: String
     
-    init(id: String,
+    init(checklistId: String,
          name: String,
          type: ChecklistType,
          fullname: String,
@@ -71,7 +88,7 @@ class UserChecklist: CompletedChecklist {
         self.fullname = fullname
         self.position = position
         
-        super.init(id: id,
+        super.init(checklistId: checklistId,
                    name: name,
                    type: type,
                    questions: questions)
@@ -88,30 +105,31 @@ class UserChecklist: CompletedChecklist {
         super.init(from: dict)
     }
     
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        position = try container.decode(String.self, forKey: .position)
-        fullname = try container.decode(String.self, forKey: .fullname)
-        let superDecoder = try container.superDecoder()
-        try super.init(from: superDecoder)
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case fullname, position
+    override var dict: [String : Any] {
+        [
+            "name": name,
+            "id": id,
+            "fullname": fullname,
+            "position": position,
+            "checklistId": checklistId,
+            "type": type.rawValue,
+            "recommendation": recommendation,
+            "checkPoints": checkPoints.map { $0.dict }
+        ]
     }
 }
 
 class RoomChecklist: CompletedChecklist {
     var room: String
     
-    init(id: String,
+    init(checklistId: String,
          name: String,
          type: ChecklistType,
          room: String,
          questions: [String]) {
         self.room = room
         
-        super.init(id: id,
+        super.init(checklistId: checklistId,
                    name: name,
                    type: type,
                    questions: questions)
@@ -127,14 +145,15 @@ class RoomChecklist: CompletedChecklist {
         super.init(from: dict)
     }
     
-    required init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        room = try container.decode(String.self, forKey: .room)
-        let superDecoder = try container.superDecoder()
-        try super.init(from: superDecoder)
-    }
-    
-    enum CodingKeys: String, CodingKey {
-        case room
+    override var dict: [String : Any] {
+        [
+            "name": name,
+            "id": id,
+            "room": room,
+            "checklistId": checklistId,
+            "type": type.rawValue,
+            "recommendation": recommendation,
+            "checkPoints": checkPoints.map { $0.dict }
+        ]
     }
 }

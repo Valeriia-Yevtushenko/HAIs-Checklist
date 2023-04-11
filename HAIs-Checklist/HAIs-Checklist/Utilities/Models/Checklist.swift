@@ -43,6 +43,17 @@ class Checklist: DatabaseModel {
             Recommendation(from: $0)
         }
     }
+    
+    var dict: [String : Any] {
+        [
+            "name": name,
+            "image": image?.absoluteString ?? "",
+            "questions": questions,
+            "type": type.rawValue,
+            "recommendations": []
+        
+        ]
+    }
 }
 
 extension Checklist: ObservableObject {}
