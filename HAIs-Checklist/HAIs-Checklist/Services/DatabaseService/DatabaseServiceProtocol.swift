@@ -8,5 +8,6 @@
 import Foundation
 
 protocol DatabaseServiceProtocol: AnyObject {
-    func get<T: DatabaseModel>() async throws -> [Document<T>]
+    func get<T: DatabaseModel>(from collection: String) async throws -> [Document<T>]
+    func create(to collection: String, document: DatabaseModel) async throws
 }

@@ -125,8 +125,8 @@ private extension ListOfChecklistView {
     }
     
     var finishRevisionButton: some View {
-        Button {
-
+        NavigationLink {
+            RevisionResultView()
         } label: {
             Text("Завершети перевірку")
                 .padding()
@@ -138,3 +138,5 @@ private extension ListOfChecklistView {
         }
     }
 }
+
+

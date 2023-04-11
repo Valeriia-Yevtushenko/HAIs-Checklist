@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol DatabaseModel {
+protocol DatabaseModel: Codable {
     init?(from dict: [String: Any])
 }

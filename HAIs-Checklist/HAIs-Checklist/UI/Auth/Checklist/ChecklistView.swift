@@ -125,10 +125,11 @@ private extension ChecklistView {
                     Text(checkPoint.question.wrappedValue)
                     Spacer()
                     Picker("", selection: checkPoint.value) {
-                        Text("Так").tag(true)
-                        Text("Ні").tag(false)
+                        ForEach(1...25, id: \.self) { number in
+                            Text("\(number)").tag(number)
+                        }
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(.menu)
                     .frame(width: 120)
                 }
                 .padding(20)

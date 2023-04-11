@@ -11,13 +11,10 @@ import FirebaseFirestore
 
 class FirestoreDatabaseService {
     private let database = Firestore.firestore()
-    private let collection = "checklists"
 }
 
 extension FirestoreDatabaseService: DatabaseServiceProtocol {
-    typealias ChecklistModel = Document<Checklist>
-    
-    func get<T: DatabaseModel>() async throws -> [Document<T>] {
+    func get<T: DatabaseModel>(from collection: String) async throws -> [Document<T>] {
         let querySnapshot = try await database.collection(collection)
             .getDocuments()
         
@@ -31,5 +28,23 @@ extension FirestoreDatabaseService: DatabaseServiceProtocol {
             return Document<T>(documentId: $0.documentID, data: documetData)
         }
         return checklists
+    }
+    
+    func create(to collection: String, document: DatabaseModel) async throws {
+        return try await withCheckedThrowingContinuation { continuation in
+            let documentId = UUID().uuidString
+            do {
+                try database.collection(collection).document(documentId).setData(from: document, completion: { error in
+                    guard let error = error else {
+                        continuation.resume()
+                        return
+                    }
+                    
+                    continuation.resume(throwing: error)
+                })
+            } catch {
+                continuation.resume(throwing: error)
+            }
+        }
     }
 }

@@ -18,10 +18,10 @@ class RevisionService: RevisionServiceProtocol {
     
     func startRevision(departament: String) async throws {
         currentRevision = Revision(departament: departament)
-        uncompletedChecklists = try await databaseService.get()
+        uncompletedChecklists = try await databaseService.get(from: "checklists")
     }
     
-    func addCompletedChecklist(_ checklist: СompletedСhecklist) {
+    func addCompletedChecklist(_ checklist: CompletedChecklist) {
         currentRevision?.checklists.append(checklist)
         
         guard checklist.type == .departament else {
@@ -45,5 +45,31 @@ class RevisionService: RevisionServiceProtocol {
     
     func getCurrentRevision() -> Revision? {
         return currentRevision
+    }
+    
+    func getRevisionResult() -> RevisionResult {
+        guard let checklists = currentRevision?.checklists else {
+            return .none
+        }
+        
+        var generalPercent =  checklists.reduce(0) { $0 + $1.percent }
+        generalPercent /= Double(checklists.count)
+        
+        if generalPercent >= 30 {
+            currentRevision?.result = .failure
+            return .failure
+        }
+        
+        currentRevision?.result = .success
+        return .success
+    }
+    
+    func saveRevision() async throws {
+        guard let currentRevision = currentRevision else {
+            return
+        }
+        
+        try await databaseService.create(to: "revisions", document: currentRevision)
+        self.currentRevision = nil
     }
 }

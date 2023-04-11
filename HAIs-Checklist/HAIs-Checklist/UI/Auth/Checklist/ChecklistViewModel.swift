@@ -10,14 +10,14 @@ import Foundation
 class ChecklistViewModel: ObservableObject {
     private let revisionService: RevisionServiceProtocol
     var checklist: Document<Checklist>
-    @Published var completedСhecklist: СompletedСhecklist!
+    @Published var completedСhecklist: CompletedChecklist!
     
     init(env: Env = .current, checklist: Document<Checklist>) {
         self.checklist = checklist
         self.revisionService = env.revisionService
         
         if checklist.data.type == .departament {
-            completedСhecklist = СompletedСhecklist(id: checklist.documentId,
+            completedСhecklist = CompletedChecklist(id: checklist.documentId,
                                                     name: checklist.data.name,
                                                     type: checklist.data.type,
                                                     questions: checklist.data.questions)
@@ -25,6 +25,11 @@ class ChecklistViewModel: ObservableObject {
     }
     
     func addCompletedChecklist() {
+        let percent = completedСhecklist.percent
+        let recommendation: String = checklist.data.recommendations.first {
+            $0.range.contains(percent)
+        }?.text ?? ""
+        completedСhecklist.recommendation = recommendation
         revisionService.addCompletedChecklist(completedСhecklist)
     }
 }
