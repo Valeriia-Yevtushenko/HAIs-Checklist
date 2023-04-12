@@ -36,11 +36,11 @@ struct RevisionDetaliesView: View {
                         Spacer().frame(width: width, height: 10)
                         switch checklist.type {
                         case .departament:
-                            generalInfoView(checklist: checklist)
+                            generalInfoView(checklist)
                         case .room:
-                            roomInfoView(checklist: checklist as? RoomChecklist)
+                            roomInfoView(checklist as? RoomChecklist)
                         case .user:
-                            userInfoView(checklist: checklist as? UserChecklist)
+                            userInfoView(checklist as? UserChecklist)
                         }
                         Spacer().frame(width: width, height: 10)
                     }
@@ -66,8 +66,8 @@ struct RevisionDetaliesView: View {
 
 private extension RevisionDetaliesView {
     @ViewBuilder
-    func userInfoView(checklist: UserChecklist?) -> some View {
-        if let checklist = checklist{
+    func userInfoView(_ value:UserChecklist?) -> some View {
+        if let checklist = value {
             Group{
                 Text(checklist.name)
                     .font(.title3)
@@ -93,20 +93,20 @@ private extension RevisionDetaliesView {
         }
     }
     
-    func generalInfoView(checklist: CompletedChecklist) ->  some View {
+    func generalInfoView(_ value: CompletedChecklist) ->  some View {
         Group {
-            Text(checklist.name)
+            Text(value.name)
                 .font(.title3)
                 .bold()
-            Text(checklist.recommendation)
+            Text(value.recommendation)
                 .font(.body)
         }
         .padding(.horizontal, 10)
     }
     
     @ViewBuilder
-    func roomInfoView(checklist: RoomChecklist?) ->  some View {
-        if let checklist = checklist{
+    func roomInfoView(_ value: RoomChecklist?) ->  some View {
+        if let checklist = value {
             Group {
                 Text(checklist.name)
                     .font(.title3)

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		971A499B29E5B7980059764C /* ListOfCompletedRevisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971A499A29E5B7980059764C /* ListOfCompletedRevisionView.swift */; };
+		971A499D29E5B8A40059764C /* ListOfCompletedRevisionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971A499C29E5B8A40059764C /* ListOfCompletedRevisionViewModel.swift */; };
 		9747779929E4319000D05C44 /* RevisionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779829E4319000D05C44 /* RevisionResultView.swift */; };
 		9747779B29E431B100D05C44 /* RevisionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */; };
 		9747779E29E4ABED00D05C44 /* RevisionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779D29E4ABED00D05C44 /* RevisionResult.swift */; };
@@ -68,6 +70,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		971A499A29E5B7980059764C /* ListOfCompletedRevisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCompletedRevisionView.swift; sourceTree = "<group>"; };
+		971A499C29E5B8A40059764C /* ListOfCompletedRevisionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCompletedRevisionViewModel.swift; sourceTree = "<group>"; };
 		9747779829E4319000D05C44 /* RevisionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResultView.swift; sourceTree = "<group>"; };
 		9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResultViewModel.swift; sourceTree = "<group>"; };
 		9747779D29E4ABED00D05C44 /* RevisionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResult.swift; sourceTree = "<group>"; };
@@ -140,21 +144,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		9747779729E4317300D05C44 /* RevisionResultView */ = {
+		971A499929E5B76F0059764C /* ListOfCompletedRevision */ = {
+			isa = PBXGroup;
+			children = (
+				971A499A29E5B7980059764C /* ListOfCompletedRevisionView.swift */,
+				971A499C29E5B8A40059764C /* ListOfCompletedRevisionViewModel.swift */,
+			);
+			path = ListOfCompletedRevision;
+			sourceTree = "<group>";
+		};
+		9747779729E4317300D05C44 /* RevisionResult */ = {
 			isa = PBXGroup;
 			children = (
 				9747779829E4319000D05C44 /* RevisionResultView.swift */,
 				9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */,
 			);
-			path = RevisionResultView;
+			path = RevisionResult;
 			sourceTree = "<group>";
 		};
-		9747779F29E56C4F00D05C44 /* RevisionDetaliesView */ = {
+		9747779F29E56C4F00D05C44 /* RevisionDetalies */ = {
 			isa = PBXGroup;
 			children = (
 				974777A029E56C6300D05C44 /* RevisionDetaliesView.swift */,
 			);
-			path = RevisionDetaliesView;
+			path = RevisionDetalies;
 			sourceTree = "<group>";
 		};
 		979E8DF8299FDADA0069B52E = {
@@ -332,8 +345,9 @@
 		979E8E7229A3881A0069B52E /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				9747779F29E56C4F00D05C44 /* RevisionDetaliesView */,
-				9747779729E4317300D05C44 /* RevisionResultView */,
+				971A499929E5B76F0059764C /* ListOfCompletedRevision */,
+				9747779F29E56C4F00D05C44 /* RevisionDetalies */,
+				9747779729E4317300D05C44 /* RevisionResult */,
 				979E8E8529A3D4EE0069B52E /* GetStarted */,
 				979E8E7A29A3B9290069B52E /* Checklist */,
 				979E8E3529A27EDD0069B52E /* ListOfChecklist */,
@@ -509,6 +523,7 @@
 				979E8E6F29A37D920069B52E /* SignInViewModel.swift in Sources */,
 				979E8E8F29A4CD6D0069B52E /* GetStartedViewModel.swift in Sources */,
 				979E8E4029A298450069B52E /* ChecklistType.swift in Sources */,
+				971A499B29E5B7980059764C /* ListOfCompletedRevisionView.swift in Sources */,
 				979E8E7129A387860069B52E /* AppCoordinator.swift in Sources */,
 				979E8E2F29A253B40069B52E /* FirestoreDatabaseService.swift in Sources */,
 				979E8E5F29A379C90069B52E /* SignUpView.swift in Sources */,
@@ -521,6 +536,7 @@
 				974777A129E56C6300D05C44 /* RevisionDetaliesView.swift in Sources */,
 				97F7769829B3ABA600E0E9F8 /* ChangePasswordView.swift in Sources */,
 				979E8E6D29A37D640069B52E /* SignInView.swift in Sources */,
+				971A499D29E5B8A40059764C /* ListOfCompletedRevisionViewModel.swift in Sources */,
 				979E8E9129A4DD610069B52E /* DatabaseModel.swift in Sources */,
 				979E8E3929A27F0A0069B52E /* Env.swift in Sources */,
 				979E8E5829A2ABE60069B52E /* User.swift in Sources */,

@@ -59,7 +59,7 @@ private extension ProfileView {
             }
 
             NavigationLink {
-                
+                ListOfCompletedRevisionView()
             } label: {
                 Image(systemName: "list.bullet.clipboard.fill")
                     .resizable()

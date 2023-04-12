@@ -63,7 +63,7 @@ private extension ChecklistView {
             Spacer()
             Button {
                 let checklist = viewModel.checklist
-                viewModel.completedСhecklist = UserChecklist(id: checklist.documentId,
+                viewModel.completedСhecklist = UserChecklist(checklistId: checklist.documentId,
                                                              name: checklist.data.name,
                                                              type: checklist.data.type,
                                                              fullname: fullname,
@@ -98,7 +98,7 @@ private extension ChecklistView {
             Spacer()
             Button {
                 let checklist = viewModel.checklist
-                viewModel.completedСhecklist = RoomChecklist(id: checklist.documentId,
+                viewModel.completedСhecklist = RoomChecklist(checklistId: checklist.documentId,
                                                              name: checklist.data.name,
                                                              type: checklist.data.type,
                                                              room: room,

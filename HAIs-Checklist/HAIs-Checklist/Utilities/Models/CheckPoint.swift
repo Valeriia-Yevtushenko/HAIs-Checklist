@@ -25,6 +25,13 @@ class CheckPoint: DatabaseModel {
         self.question = question
         self.value = value
     }
+    
+    var dict: [String: Any]  {
+        [
+            "question": question,
+            "value": value
+        ]
+    }
 }
 
 extension CheckPoint: Identifiable {}
