@@ -21,7 +21,7 @@ struct ChangePasswordView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Change password")
+            Text("Зміна паролю")
                 .font(.title)
                 .foregroundColor(.black)
             if let error = error {
@@ -35,9 +35,9 @@ struct ChangePasswordView: View {
                 .cornerRadius(.pi)
                 .padding(.bottom, 20)
             }
-            PasswordSecureField(password: $oldPassword, placeholder: "Old password")
-            PasswordSecureField(password: $newPassword, placeholder: "New password")
-            PasswordSecureField(password: $confirmeNewPassword, placeholder: "Confirme new password")
+            PasswordSecureField(password: $oldPassword, placeholder: "Старий пароль")
+            PasswordSecureField(password: $newPassword, placeholder: "Новий пароль")
+            PasswordSecureField(password: $confirmeNewPassword, placeholder: "Повторіть новий пароль")
             changeButton
         }
         .padding(20)
@@ -61,7 +61,7 @@ private extension ChangePasswordView {
                 }
             }
         } label: {
-            Text("Change")
+            Text("Змінити")
                 .frame(maxWidth: .infinity)
                 .padding(10)
                 .foregroundColor(.white)

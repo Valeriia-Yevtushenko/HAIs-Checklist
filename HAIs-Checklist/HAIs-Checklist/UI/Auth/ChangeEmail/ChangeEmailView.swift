@@ -21,7 +21,7 @@ struct ChangeEmailView: View {
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Change Email")
+            Text("Змінити е-мейл")
                 .font(.title)
                 .foregroundColor(.black)
             if let error = error {
@@ -58,7 +58,7 @@ private extension ChangeEmailView {
                 }
             }
         } label: {
-            Text("Change")
+            Text("Змінити")
                 .frame(maxWidth: .infinity)
                 .padding(10)
                 .foregroundColor(.white)
