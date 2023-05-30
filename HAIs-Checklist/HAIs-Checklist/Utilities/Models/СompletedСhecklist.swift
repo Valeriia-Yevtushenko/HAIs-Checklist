@@ -68,7 +68,7 @@ extension CompletedChecklist {
         let maxPossibleValue = 25 * checkPoints.count
         var percent: Double = Double(checklistSum) / Double(maxPossibleValue)
         percent *= 100
-        return percent
+        return round(percent)
     }
 }
 
