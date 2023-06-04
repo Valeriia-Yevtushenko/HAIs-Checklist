@@ -18,18 +18,33 @@ class RevisionService: RevisionServiceProtocol {
     
     func startRevision(departament: String) async throws {
         currentRevision = Revision(departament: departament)
-        uncompletedChecklists = try await databaseService.get()
+        uncompletedChecklists = try await databaseService.get(from: "checklists")
     }
     
-    func addCompletedChecklist(_ checklist: СompletedСhecklist) {
-        currentRevision?.checklists.append(checklist)
+    func addCompletedChecklist(_ value: CompletedChecklist) {
+        switch value.type{
+        case .user:
+            guard let checklist = value as? UserChecklist else {
+                return
+            }
+            
+            currentRevision?.userChecklists.append(checklist)
+        case .room:
+            guard let checklist = value as? RoomChecklist else {
+                return
+            }
+            
+            currentRevision?.roomChecklists.append(checklist)
+        case .departament:
+            currentRevision?.departamentChecklists.append(value)
+        }
         
-        guard checklist.type == .departament else {
+        guard value.type == .departament else {
             return
         }
         
         let index = uncompletedChecklists.firstIndex {
-            $0.documentId == checklist.id
+            $0.documentId == value.checklistId
         }
         
         guard let index = index else {
@@ -45,5 +60,32 @@ class RevisionService: RevisionServiceProtocol {
     
     func getCurrentRevision() -> Revision? {
         return currentRevision
+    }
+    
+    func getRevisionResult() -> RevisionResult {
+        guard let checklists = currentRevision?.checklists else {
+            return .none
+        }
+        
+        var generalPercent =  checklists.reduce(0) { $0 + $1.percent }
+        generalPercent /= Double(checklists.count)
+        
+        if generalPercent >= 30 {
+            currentRevision?.result = .failure
+            return .failure
+        }
+        
+        currentRevision?.result = .success
+        return .success
+    }
+    
+    func saveRevision() async throws {
+        guard let currentRevision = currentRevision else {
+            return
+        }
+        
+        currentRevision.date = .now
+        try await databaseService.create(to: "revisions", document: currentRevision)
+        self.currentRevision = nil
     }
 }

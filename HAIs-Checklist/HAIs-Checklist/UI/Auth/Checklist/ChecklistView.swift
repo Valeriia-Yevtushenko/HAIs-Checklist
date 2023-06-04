@@ -63,7 +63,7 @@ private extension ChecklistView {
             Spacer()
             Button {
                 let checklist = viewModel.checklist
-                viewModel.completedСhecklist = UserChecklist(id: checklist.documentId,
+                viewModel.completedСhecklist = UserChecklist(checklistId: checklist.documentId,
                                                              name: checklist.data.name,
                                                              type: checklist.data.type,
                                                              fullname: fullname,
@@ -98,7 +98,7 @@ private extension ChecklistView {
             Spacer()
             Button {
                 let checklist = viewModel.checklist
-                viewModel.completedСhecklist = RoomChecklist(id: checklist.documentId,
+                viewModel.completedСhecklist = RoomChecklist(checklistId: checklist.documentId,
                                                              name: checklist.data.name,
                                                              type: checklist.data.type,
                                                              room: room,
@@ -125,10 +125,11 @@ private extension ChecklistView {
                     Text(checkPoint.question.wrappedValue)
                     Spacer()
                     Picker("", selection: checkPoint.value) {
-                        Text("Так").tag(true)
-                        Text("Ні").tag(false)
+                        ForEach(1...25, id: \.self) { number in
+                            Text("\(number)").tag(number)
+                        }
                     }
-                    .pickerStyle(.segmented)
+                    .pickerStyle(.menu)
                     .frame(width: 120)
                 }
                 .padding(20)

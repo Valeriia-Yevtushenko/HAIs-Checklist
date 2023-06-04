@@ -9,4 +9,5 @@ import Foundation
 
 protocol DatabaseModel {
     init?(from dict: [String: Any])
+    var dict: [String: Any] { get }
 }

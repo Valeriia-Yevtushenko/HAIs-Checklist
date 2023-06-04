@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		971A499B29E5B7980059764C /* ListOfCompletedRevisionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971A499A29E5B7980059764C /* ListOfCompletedRevisionView.swift */; };
+		971A499D29E5B8A40059764C /* ListOfCompletedRevisionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 971A499C29E5B8A40059764C /* ListOfCompletedRevisionViewModel.swift */; };
+		971A49BF29F5A23E0059764C /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 971A49BE29F5A23E0059764C /* Launch Screen.storyboard */; };
+		9747779929E4319000D05C44 /* RevisionResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779829E4319000D05C44 /* RevisionResultView.swift */; };
+		9747779B29E431B100D05C44 /* RevisionResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */; };
+		9747779E29E4ABED00D05C44 /* RevisionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9747779D29E4ABED00D05C44 /* RevisionResult.swift */; };
+		974777A129E56C6300D05C44 /* RevisionDetaliesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974777A029E56C6300D05C44 /* RevisionDetaliesView.swift */; };
 		979E8E05299FDADA0069B52E /* HAIs_ChecklistApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 979E8E04299FDADA0069B52E /* HAIs_ChecklistApp.swift */; };
 		979E8E09299FDADC0069B52E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 979E8E08299FDADC0069B52E /* Assets.xcassets */; };
 		979E8E0C299FDADC0069B52E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 979E8E0B299FDADC0069B52E /* Preview Assets.xcassets */; };
@@ -64,6 +71,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		971A499A29E5B7980059764C /* ListOfCompletedRevisionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCompletedRevisionView.swift; sourceTree = "<group>"; };
+		971A499C29E5B8A40059764C /* ListOfCompletedRevisionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListOfCompletedRevisionViewModel.swift; sourceTree = "<group>"; };
+		971A49BE29F5A23E0059764C /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		9747779829E4319000D05C44 /* RevisionResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResultView.swift; sourceTree = "<group>"; };
+		9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResultViewModel.swift; sourceTree = "<group>"; };
+		9747779D29E4ABED00D05C44 /* RevisionResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionResult.swift; sourceTree = "<group>"; };
+		974777A029E56C6300D05C44 /* RevisionDetaliesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RevisionDetaliesView.swift; sourceTree = "<group>"; };
 		979E8E01299FDADA0069B52E /* HAIs-Checklist.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HAIs-Checklist.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		979E8E04299FDADA0069B52E /* HAIs_ChecklistApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HAIs_ChecklistApp.swift; sourceTree = "<group>"; };
 		979E8E08299FDADC0069B52E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -132,6 +146,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		971A499929E5B76F0059764C /* ListOfCompletedRevision */ = {
+			isa = PBXGroup;
+			children = (
+				971A499A29E5B7980059764C /* ListOfCompletedRevisionView.swift */,
+				971A499C29E5B8A40059764C /* ListOfCompletedRevisionViewModel.swift */,
+			);
+			path = ListOfCompletedRevision;
+			sourceTree = "<group>";
+		};
+		9747779729E4317300D05C44 /* RevisionResult */ = {
+			isa = PBXGroup;
+			children = (
+				9747779829E4319000D05C44 /* RevisionResultView.swift */,
+				9747779A29E431B100D05C44 /* RevisionResultViewModel.swift */,
+			);
+			path = RevisionResult;
+			sourceTree = "<group>";
+		};
+		9747779F29E56C4F00D05C44 /* RevisionDetalies */ = {
+			isa = PBXGroup;
+			children = (
+				974777A029E56C6300D05C44 /* RevisionDetaliesView.swift */,
+			);
+			path = RevisionDetalies;
+			sourceTree = "<group>";
+		};
 		979E8DF8299FDADA0069B52E = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +199,7 @@
 				979E8E1D29A15A350069B52E /* GoogleService-Info.plist */,
 				979E8E08299FDADC0069B52E /* Assets.xcassets */,
 				979E8E0A299FDADC0069B52E /* Preview Content */,
+				971A49BE29F5A23E0059764C /* Launch Screen.storyboard */,
 			);
 			path = "HAIs-Checklist";
 			sourceTree = "<group>";
@@ -178,7 +219,7 @@
 				979E8E6929A37B690069B52E /* ValidationService */,
 				979E8E4D29A29FB10069B52E /* StorageService */,
 				979E8E4129A29DB50069B52E /* AuthorizationService */,
-				979E8E3E29A2979D0069B52E /* ChecklistService */,
+				979E8E3E29A2979D0069B52E /* DatabaseService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,6 +244,7 @@
 				979E8E5529A2ABBD0069B52E /* AppKeys.swift */,
 				979E8E9029A4DD610069B52E /* DatabaseModel.swift */,
 				97F7769B29B3ABF600E0E9F8 /* ChangePasswordError.swift */,
+				9747779D29E4ABED00D05C44 /* RevisionResult.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -229,13 +271,13 @@
 			path = ListOfChecklist;
 			sourceTree = "<group>";
 		};
-		979E8E3E29A2979D0069B52E /* ChecklistService */ = {
+		979E8E3E29A2979D0069B52E /* DatabaseService */ = {
 			isa = PBXGroup;
 			children = (
 				979E8E2E29A253B40069B52E /* FirestoreDatabaseService.swift */,
 				979E8E2C29A253600069B52E /* DatabaseServiceProtocol.swift */,
 			);
-			path = ChecklistService;
+			path = DatabaseService;
 			sourceTree = "<group>";
 		};
 		979E8E4129A29DB50069B52E /* AuthorizationService */ = {
@@ -306,6 +348,9 @@
 		979E8E7229A3881A0069B52E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				971A499929E5B76F0059764C /* ListOfCompletedRevision */,
+				9747779F29E56C4F00D05C44 /* RevisionDetalies */,
+				9747779729E4317300D05C44 /* RevisionResult */,
 				979E8E8529A3D4EE0069B52E /* GetStarted */,
 				979E8E7A29A3B9290069B52E /* Checklist */,
 				979E8E3529A27EDD0069B52E /* ListOfChecklist */,
@@ -453,6 +498,7 @@
 			files = (
 				979E8E0C299FDADC0069B52E /* Preview Assets.xcassets in Resources */,
 				979E8E09299FDADC0069B52E /* Assets.xcassets in Resources */,
+				971A49BF29F5A23E0059764C /* Launch Screen.storyboard in Resources */,
 				979E8E1E29A15A350069B52E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -465,12 +511,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				979E8E3729A27EEC0069B52E /* ListOfChecklistViewModel.swift in Sources */,
+				9747779929E4319000D05C44 /* RevisionResultView.swift in Sources */,
+				9747779B29E431B100D05C44 /* RevisionResultViewModel.swift in Sources */,
 				979E8E7429A388500069B52E /* TabViewCoordinator.swift in Sources */,
 				979E8E7929A38DDA0069B52E /* ProfileViewModel.swift in Sources */,
 				979E8E8729A3D5190069B52E /* GetStartedView.swift in Sources */,
 				979E8E4329A29DF80069B52E /* AuthorizationServiceProtocol.swift in Sources */,
 				97F7769529B3AA5800E0E9F8 /* ChangeEmailViewModel.swift in Sources */,
 				97F7769029B39D0200E0E9F8 /* SettingsView.swift in Sources */,
+				9747779E29E4ABED00D05C44 /* RevisionResult.swift in Sources */,
 				979E8E6129A379F00069B52E /* SignUpViewModel.swift in Sources */,
 				97F7769329B3AA1800E0E9F8 /* ChangeEmailView.swift in Sources */,
 				979E8E8229A3C53E0069B52E /* СompletedСhecklist.swift in Sources */,
@@ -478,6 +527,7 @@
 				979E8E6F29A37D920069B52E /* SignInViewModel.swift in Sources */,
 				979E8E8F29A4CD6D0069B52E /* GetStartedViewModel.swift in Sources */,
 				979E8E4029A298450069B52E /* ChecklistType.swift in Sources */,
+				971A499B29E5B7980059764C /* ListOfCompletedRevisionView.swift in Sources */,
 				979E8E7129A387860069B52E /* AppCoordinator.swift in Sources */,
 				979E8E2F29A253B40069B52E /* FirestoreDatabaseService.swift in Sources */,
 				979E8E5F29A379C90069B52E /* SignUpView.swift in Sources */,
@@ -487,8 +537,10 @@
 				979E8E7729A38DC30069B52E /* ProfileView.swift in Sources */,
 				979E8E7E29A3B9860069B52E /* ChecklistViewModel.swift in Sources */,
 				979E8E9529A526F60069B52E /* CheckPoint.swift in Sources */,
+				974777A129E56C6300D05C44 /* RevisionDetaliesView.swift in Sources */,
 				97F7769829B3ABA600E0E9F8 /* ChangePasswordView.swift in Sources */,
 				979E8E6D29A37D640069B52E /* SignInView.swift in Sources */,
+				971A499D29E5B8A40059764C /* ListOfCompletedRevisionViewModel.swift in Sources */,
 				979E8E9129A4DD610069B52E /* DatabaseModel.swift in Sources */,
 				979E8E3929A27F0A0069B52E /* Env.swift in Sources */,
 				979E8E5829A2ABE60069B52E /* User.swift in Sources */,
@@ -645,6 +697,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
@@ -676,6 +729,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;

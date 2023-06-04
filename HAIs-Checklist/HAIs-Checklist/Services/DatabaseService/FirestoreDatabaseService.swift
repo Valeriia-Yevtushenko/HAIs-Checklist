@@ -11,18 +11,19 @@ import FirebaseFirestore
 
 class FirestoreDatabaseService {
     private let database = Firestore.firestore()
-    private let collection = "checklists"
 }
 
 extension FirestoreDatabaseService: DatabaseServiceProtocol {
-    typealias ChecklistModel = Document<Checklist>
-    
-    func get<T: DatabaseModel>() async throws -> [Document<T>] {
+    func get<T: DatabaseModel>(from collection: String) async throws -> [Document<T>] {
         let querySnapshot = try await database.collection(collection)
             .getDocuments()
         
         let checklists: [Document<T>] = querySnapshot.documents.compactMap {
-            let data = $0.data()
+            var data = $0.data()
+            
+            if let date = data["date"] as? Timestamp {
+                data["date"] = date.dateValue()
+            }
             
             guard let documetData = T(from: data) else {
                 return nil
@@ -30,6 +31,12 @@ extension FirestoreDatabaseService: DatabaseServiceProtocol {
             
             return Document<T>(documentId: $0.documentID, data: documetData)
         }
+        
         return checklists
+    }
+    
+    func create(to collection: String, document: DatabaseModel) async throws {
+        let documentId = UUID().uuidString
+        try await database.collection(collection).document(documentId).setData(document.dict)
     }
 }
